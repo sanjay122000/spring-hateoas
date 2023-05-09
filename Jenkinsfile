@@ -12,10 +12,8 @@ pipeline {
         sh 'docker push <image-name>:<tag>'
       }
     }
-    stage('Deploy') {
-      steps {
-        sh 'docker run -p 8080:8080 -d <image-name>:<tag>'
-      }
-    }
+   stage('Deploy') {
+  steps {
+    sh 'docker run -p 9090:8080 -d <image-name>:<tag>'
   }
 }
